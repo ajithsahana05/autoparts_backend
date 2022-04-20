@@ -20,6 +20,7 @@ from datetime import datetime,timedelta,date
 def customer_signup(request):
     if request.method == 'POST':
         jsonData = json.loads(request.body)
+        print(jsonData)
         Serializers = CustomerInfoSerializers(data=jsonData)
         if Serializers.is_valid():
             Serializers.save()
